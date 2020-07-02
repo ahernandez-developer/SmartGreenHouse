@@ -47,7 +47,7 @@
         <h2 class="pt-5">Historial de temperaturas</h2>
         <table id="history" class="table table-striped mt-5">
             <thead>
-                <th>ID</th>
+                
                 <th>
                     Temperatura interior
                 </th>
@@ -58,7 +58,7 @@
             </thead>
             <tbody>
                 <tr v-for="(record,index) in history" :key="index">
-                    <td>{{index}}</td>
+                    
                     <td>
                         {{record.insideTemp}}°
                     </td>

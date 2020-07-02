@@ -8,14 +8,13 @@ window.onload = function () {
 const app = new Vue({
   el: "#app",
   created() {
-    
     this.fetchCUrrent();
     this.fetchHistory();
   },
-  data:{
-    currentTempInside:"",
-    currentTempOutside:"",
-    history:[]
+  data: {
+    currentTempInside: "",
+    currentTempOutside: "",
+    history: [],
   },
   methods: {
     fetchCUrrent() {
@@ -32,17 +31,26 @@ const app = new Vue({
         });
     },
     fetchHistory() {
-      axios.get("history.json", {}).then((response) => {
-        this.history = response.data.payload;
-        $(document).ready(function() {
-          console.log("lol");
-          $('#history').DataTable(
-            {
-              responsive: true
-            }
-          );
-      } );
-      });
+      axios
+        .get(
+          "https://api.deldesierto.org/climate/temperatureData",
+          
+          {
+            headers: {
+              Authorization: "59f02390-a2a3-4dc1-b19d-3c37d8933fa0",
+            },
+            params:{ startDate: "2020-05-28", endDate: "2021-05-28" },
+          }
+        )
+        .then((response) => {
+          this.history = response.data.payload.reverse();
+          $(document).ready(function () {
+         
+            $("#history").DataTable({
+              responsive: true,
+            });
+          });
+        });
     },
   },
 });
