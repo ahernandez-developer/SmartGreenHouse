@@ -7,8 +7,9 @@ window.onload = function () {
 
 const app = new Vue({
   el: "#app",
-  created() {
-    this.fetchCUrrent();
+  created() {    
+    //this.startFetching(); 
+    this.fetchCurrent();
     this.fetchHistory();
   },
   data: {
@@ -17,7 +18,10 @@ const app = new Vue({
     history: [],
   },
   methods: {
-    fetchCUrrent() {
+    startFetching() {
+      var t = setInterval(()=>this.fetchCurrent(), 5000);
+    },
+    fetchCurrent() {
       axios
         .get("https://api.deldesierto.org/climate/lastEntry", {
           headers: {
@@ -26,26 +30,24 @@ const app = new Vue({
         })
         .then((response) => {
           this.currentTempInside = response.data.payload[0].insideTemp;
-          this.currentTempOutside = response.data.payload[0].outsideTemp;
-          console.log(response.data.payload);
+          this.currentTempOutside = response.data.payload[0].outsideTemp;          
         });
     },
     fetchHistory() {
       axios
         .get(
           "https://api.deldesierto.org/climate/temperatureData",
-          
+
           {
             headers: {
               Authorization: "59f02390-a2a3-4dc1-b19d-3c37d8933fa0",
             },
-            params:{ startDate: "2020-05-28", endDate: "2021-05-28" },
+            params: { startDate: "2020-05-28", endDate: "2021-05-28" },
           }
         )
         .then((response) => {
           this.history = response.data.payload.reverse();
           $(document).ready(function () {
-         
             $("#history").DataTable({
               responsive: true,
             });
