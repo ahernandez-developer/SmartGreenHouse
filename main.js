@@ -8,6 +8,7 @@ window.onload = function () {
 const app = new Vue({
   el: "#app",
   created() {
+    
     this.fetchCUrrent();
     this.fetchHistory();
   },
@@ -33,6 +34,10 @@ const app = new Vue({
     fetchHistory() {
       axios.get("history.json", {}).then((response) => {
         this.history = response.data.payload;
+        $(document).ready(function() {
+          console.log("lol");
+          $('#history').DataTable();
+      } );
       });
     },
   },

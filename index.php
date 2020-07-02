@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="app.css">
     <title>SmartGreenHouse</title>
 </head>
@@ -42,7 +43,7 @@
         </div>
         <hr>
         <h2 class="pt-5">Historial de temperaturas</h2>
-        <table class="table table-striped mt-5">
+        <table id="history" class="table table-striped mt-5">
             <thead>
                 <th>ID</th>
                 <th>
@@ -74,6 +75,8 @@
     <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <script src="day.js"></script>
     <script src="week.js"></script>
     <script src="main.js"></script>
