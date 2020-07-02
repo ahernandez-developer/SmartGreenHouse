@@ -36,7 +36,11 @@ const app = new Vue({
         this.history = response.data.payload;
         $(document).ready(function() {
           console.log("lol");
-          $('#history').DataTable();
+          $('#history').DataTable(
+            {
+              responsive: true
+            }
+          );
       } );
       });
     },
