@@ -11,15 +11,27 @@
 </head>
 
 <body>
-    <div class="container text-center">
+    <div id="app" class="container text-center">
         <h1>Smart Green House</h1>
         <div class="row justify-content-center">
-            <div>
-                <h2 class="pt-5 text-danger">35°</h2>
-                <span>Temperatura actual</span>
-            </div>
+            <div class="col-6">
 
+                <div class="row justify-content-between">
+                    <div>
+                        <h2 class="pt-5 text-danger">{{currentTempInside}}°</h2>
+                        <span>Temperatura actual interior</span>
+                    </div>
+                    <div>
+                        <h2 class="pt-5 text-danger">{{currentTempOutside}}°</h2>
+                        <span>Temperatura actual exterior</span>
+                    </div>
+
+                </div>
+            </div>
         </div>
+        <br>
+
+        <hr>
         <div class="row justify-content-between">
             <div class="col-md-6 ">
                 <canvas id="day"></canvas>
@@ -28,23 +40,30 @@
                 <canvas id="week"></canvas>
             </div>
         </div>
+        <hr>
         <h2 class="pt-5">Historial de temperaturas</h2>
         <table class="table table-striped mt-5">
             <thead>
                 <th>ID</th>
                 <th>
-                    Temperatura
+                    Temperatura interior
+                </th>
+                <th>
+                    Temperatura exterior
                 </th>
                 <th>Fecha</th>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
+                <tr v-for="(record,index) in history" :key="index">
+                    <td>{{index}}</td>
                     <td>
-                        15°
+                        {{record.insideTemp}}°
                     </td>
                     <td>
-                        25-Junio-2020
+                        {{record.outsideTemp ? record.outsideTemp+'°' : "No disponible"}}
+                    </td>
+                    <td>
+                        {{record.created}}
                     </td>
                 </tr>
             </tbody>
@@ -53,7 +72,8 @@
     <!-- scripts -->
     <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
     <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
     <script src="day.js"></script>
     <script src="week.js"></script>
     <script src="main.js"></script>

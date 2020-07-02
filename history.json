@@ -1,0 +1,277 @@
+{
+    "payload": [
+        {
+            "_id": "5ef2dc65c17dfa15d216dd4c",
+            "insideTemp": 31.062,
+            "cpuTemp": 56.478,
+            "created": "2020-05-02T19:02:00.000Z",
+            "uuid": "4d364494-e409-47d9-ad87-0c473e666213",
+            "__v": 0
+        },
+        {
+            "_id": "5ef2dc65c17dfa15d216dd4d",
+            "insideTemp": 31.062,
+            "cpuTemp": 55.991,
+            "created": "2020-05-02T19:02:00.000Z",
+            "uuid": "3ec344d0-adf5-4bda-b0e2-dfdf5a14621d",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdfa4d35420e0b3c31ba",
+            "insideTemp": 31.062,
+            "cpuTemp": 56.478,
+            "created": "2020-05-02T19:02:20.957Z",
+            "uuid": "ec922648-15d3-4f58-953d-d06174576360",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdfa4d35420e0b3c31bb",
+            "insideTemp": 31.062,
+            "cpuTemp": 55.991,
+            "created": "2020-05-02T19:02:45.917Z",
+            "uuid": "4ecdffad-84e5-4825-a946-f9e199d89f98",
+            "__v": 0
+        },
+        {
+            "_id": "5ef2dc66c17dfa15d216dd4e",
+            "insideTemp": 30.437,
+            "cpuTemp": 54.043,
+            "created": "2020-05-02T19:18:00.000Z",
+            "uuid": "5247a974-08b6-4bf9-8b01-1bf527a4043b",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdfa4d35420e0b3c31bc",
+            "insideTemp": 30.437,
+            "cpuTemp": 54.043,
+            "created": "2020-05-02T19:18:57.518Z",
+            "uuid": "ded19fcf-97a1-4e4e-ac44-7129fcc9a557",
+            "__v": 0
+        },
+        {
+            "_id": "5ef2dc66c17dfa15d216dd4f",
+            "insideTemp": 30.437,
+            "outsideTemp": 27,
+            "cpuTemp": 54.53,
+            "created": "2020-05-02T19:19:00.000Z",
+            "uuid": "828b011b-9276-4bf9-9317-8e9ab18e8659",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdfa4d35420e0b3c31bd",
+            "insideTemp": 30.437,
+            "cpuTemp": 54.53,
+            "created": "2020-05-02T19:19:19.997Z",
+            "uuid": "b0301d36-bfb2-4e80-8808-9ece5c74ea21",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdfb4d35420e0b3c31be",
+            "insideTemp": 25.062,
+            "cpuTemp": 46.738,
+            "created": "2020-05-02T20:57:50.477Z",
+            "uuid": "ca217d6d-a8d0-4a82-bd93-a3f627504c1b",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdfb4d35420e0b3c31bf",
+            "insideTemp": 25,
+            "cpuTemp": 47.712,
+            "created": "2020-05-02T21:02:51.517Z",
+            "uuid": "f701ec6d-7d90-41d0-a106-f7f59ae24bb7",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdfb4d35420e0b3c31c0",
+            "insideTemp": 25,
+            "cpuTemp": 47.712,
+            "created": "2020-05-02T21:02:52.477Z",
+            "uuid": "a730c62f-a57a-49df-a438-6b9782907ac1",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdfb4d35420e0b3c31c1",
+            "insideTemp": 25,
+            "cpuTemp": 48.2,
+            "created": "2020-05-02T21:20:13.277Z",
+            "uuid": "b6fb8a8e-34fc-4743-ba08-97d9d298ae6f",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdfc4d35420e0b3c31c2",
+            "insideTemp": 25.06,
+            "cpuTemp": 48.2,
+            "created": "2020-05-02T21:22:22.237Z",
+            "uuid": "2a8568b2-0b78-4de6-8ef3-ba15e57e1ee3",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdfc4d35420e0b3c31c3",
+            "insideTemp": 25.12,
+            "cpuTemp": 47.71,
+            "created": "2020-05-02T21:27:23.277Z",
+            "uuid": "31ce7a12-1330-4d97-a5a9-be55e1a7e520",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdfc4d35420e0b3c31c4",
+            "insideTemp": 25.19,
+            "cpuTemp": 47.23,
+            "created": "2020-05-02T21:32:24.317Z",
+            "uuid": "11efa8f9-baa0-4bec-8264-7c85badc5ecd",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdfc4d35420e0b3c31c5",
+            "insideTemp": 25.25,
+            "cpuTemp": 48.69,
+            "created": "2020-05-02T21:34:05.037Z",
+            "uuid": "e63f1fdf-a38e-4164-b53c-0c60ba72bfec",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdfd4d35420e0b3c31c6",
+            "insideTemp": 25.5,
+            "cpuTemp": 48.69,
+            "created": "2020-05-02T21:38:22.237Z",
+            "uuid": "4c49775d-b6c7-4e63-b0b3-f41dc15728cf",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdfd4d35420e0b3c31c7",
+            "insideTemp": 25,
+            "cpuTemp": 48.2,
+            "created": "2020-05-02T21:39:52.797Z",
+            "uuid": "37da4ba1-8809-4766-bdad-e2e75a87c5c5",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdfd4d35420e0b3c31c8",
+            "insideTemp": 25,
+            "cpuTemp": 48.2,
+            "created": "2020-05-02T21:44:53.757Z",
+            "uuid": "a0abf039-a14d-4afe-9086-e84f12564d18",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdfd4d35420e0b3c31c9",
+            "insideTemp": 24.5,
+            "cpuTemp": 47.71,
+            "created": "2020-05-02T21:49:54.797Z",
+            "uuid": "fdabc355-d648-4b18-8bea-9ecf8caf313e",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdfe4d35420e0b3c31ca",
+            "insideTemp": 24.5,
+            "cpuTemp": 47.71,
+            "created": "2020-05-02T21:54:55.837Z",
+            "uuid": "ab3b3420-142c-423f-89e2-1122105db44f",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdfe4d35420e0b3c31cb",
+            "insideTemp": 24.5,
+            "cpuTemp": 48.69,
+            "created": "2020-05-02T21:59:56.877Z",
+            "uuid": "7072f20b-9512-49c2-b89f-79512c7faf0d",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdfe4d35420e0b3c31cc",
+            "insideTemp": 24.5,
+            "cpuTemp": 47.71,
+            "created": "2020-05-02T22:04:57.917Z",
+            "uuid": "67cea0c7-41fa-4bad-a135-11406acf9688",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdfe4d35420e0b3c31cd",
+            "insideTemp": 24.5,
+            "cpuTemp": 47.23,
+            "created": "2020-05-02T22:09:58.957Z",
+            "uuid": "8dd56e0f-5cbd-42b8-b1f1-169558af45bd",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdff4d35420e0b3c31ce",
+            "insideTemp": 24,
+            "cpuTemp": 47.23,
+            "created": "2020-05-02T22:14:59.997Z",
+            "uuid": "c38af14e-6606-4c14-af81-63f5a43c7436",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdff4d35420e0b3c31cf",
+            "insideTemp": 23.5,
+            "cpuTemp": 46.74,
+            "created": "2020-05-02T22:20:01.037Z",
+            "uuid": "0f8f9750-7944-4602-a36a-68a50e56e2ec",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdff4d35420e0b3c31d0",
+            "insideTemp": 23.5,
+            "cpuTemp": 46.74,
+            "created": "2020-05-02T22:25:02.077Z",
+            "uuid": "ae56a686-c7d5-4597-8e9e-1285899147ad",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3bdff4d35420e0b3c31d1",
+            "insideTemp": 24,
+            "cpuTemp": 47.71,
+            "created": "2020-05-02T22:30:03.117Z",
+            "uuid": "4bab4ea7-9853-4424-853b-ba50d4841932",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3be004d35420e0b3c31d2",
+            "insideTemp": 24,
+            "cpuTemp": 46.74,
+            "created": "2020-05-02T22:35:04.157Z",
+            "uuid": "7f69e255-1bbb-4d14-b58f-5173df83e4f0",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3be004d35420e0b3c31d3",
+            "insideTemp": 24,
+            "cpuTemp": 46.74,
+            "created": "2020-05-02T22:40:05.197Z",
+            "uuid": "ef612567-256d-4dbb-b4c9-976b6d6af730",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3be004d35420e0b3c31d4",
+            "insideTemp": 23.5,
+            "cpuTemp": 47.23,
+            "created": "2020-05-02T22:45:06.237Z",
+            "uuid": "8e177f5d-50ad-416f-996e-b88a4832283b",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3be004d35420e0b3c31d5",
+            "insideTemp": 23.5,
+            "cpuTemp": 47.23,
+            "created": "2020-05-02T22:50:07.277Z",
+            "uuid": "987cfeb0-f67d-4f9a-a9e6-7fab6570c929",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3be014d35420e0b3c31d6",
+            "insideTemp": 23.5,
+            "cpuTemp": 46.25,
+            "created": "2020-05-02T22:55:08.317Z",
+            "uuid": "5bfb826f-d411-474a-847f-9017d4152e64",
+            "__v": 0
+        },
+        {
+            "_id": "5ef3be014d35420e0b3c31d7",
+            "insideTemp": 23,
+            "cpuTemp": 45.76,
+            "created": "2020-05-02T23:00:09.357Z",
+            "uuid": "25f2b2e3-37fb-46cc-a68d-6ad6f48e39fb",
+            "__v": 0
+        }
+    ]
+}
