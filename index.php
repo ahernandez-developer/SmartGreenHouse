@@ -1,88 +1,40 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- styles -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Login</title>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.dataTables.min.css">
-    <link rel="stylesheet" href="app.css">
-    <title>SmartGreenHouse</title>
+
+
 </head>
 
-<body>
-    <div id="app" class="container text-center">
-        <h1>Smart Green House</h1>
-        <div class="row justify-content-center">
-            <div class="col-6">
-
-                <div class="row justify-content-between">
-                    <div>
-                        <h2 class="pt-5 text-danger">{{currentTempInside}}°</h2>
-                        <span>Temperatura actual interior</span>
-                    </div>
-                    <div>
-                        <h2 class="pt-5 text-danger">{{currentTempOutside}}°</h2>
-                        <span>Temperatura actual exterior</span>
-                    </div>
-
+<body class="text-center">
+    <form class="container  h-100" action="./validate.php" method="POST">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-sm-12 col-md-4">
+                <img src="./assets/logo.png" class="pb-4" alt="logo">
+                <label for="inputEmail" class="sr-only">No telefono</label>
+                <input type="text" id="inputEmail" name="number" class="mb-4 form-control" placeholder="No telefono" required autofocus>
+                <label for="inputPassword" class="sr-only">Contraseña</label>
+                <input type="password" id="inputPassword" name="password" class="mb-4 form-control" placeholder="Contraseña" required>
+                <div class="checkbox mb-3">
+                    <label class="float-right pb-1">
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
                 </div>
+                <button class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
+                <a class="float-right text-under" href="tel:+526563073034"><u>Soporte</u> </a>
+                <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
             </div>
-        </div>
-        <br>
 
-        <hr>
-        <div class="row justify-content-between">
-            <div class="col-md-6 ">
-                <canvas id="day"></canvas>
-            </div>
-            <div class="col-md-6">
-                <canvas id="week"></canvas>
-            </div>
         </div>
-        <hr>
-        <h2 class="pt-5">Historial de temperaturas</h2>
-        <table id="history" class="table table-striped mt-5">
-            <thead>
-                
-                <th>
-                    Temperatura interior
-                </th>
-                <th>
-                    Temperatura exterior
-                </th>
-                <th>Fecha</th>
-            </thead>
-            <tbody>
-                <tr v-for="(record,index) in history" :key="index">
-                    
-                    <td>
-                        {{record.insideTemp}}°
-                    </td>
-                    <td>
-                        {{record.outsideTemp ? record.outsideTemp+'°' : "No disponible"}}
-                    </td>
-                    <td>
-                        {{record.created}}
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <!-- scripts -->
-    <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
-    <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
-    <script src="day.js"></script>
-    <script src="week.js"></script>
-    <script src="main.js"></script>
+    </form>
 </body>
 
 </html>
