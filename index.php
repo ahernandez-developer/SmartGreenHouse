@@ -25,10 +25,10 @@
                 <input type="password" id="inputPassword" name="password" class="mb-4 form-control" placeholder="Contraseña" required>
                 <div class="checkbox mb-3">
                     <label class="float-right pb-1">
-                        <input type="checkbox" value="remember-me"> Remember me
+                        <input type="checkbox" value="remember-me"> Recordar credenciales
                     </label>
                 </div>
-                <button class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
+                <button class="btn btn-lg btn-success btn-block" type="submit">Entrar</button>
                 <a class="float-right text-under" href="tel:+526563073034"><u>Soporte</u> </a>
                 <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
             </div>
