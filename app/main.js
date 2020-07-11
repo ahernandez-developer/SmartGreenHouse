@@ -26,15 +26,19 @@ const app = new Vue({
           params: { startDate: "2020-07-01", endDate: "2021-01-01" },
         })
         .then((response) => {
-          this.history = response.data.payload.reverse();
+          let temps = response.data.payload;
+
+          this.history = temps.reverse();
+          console.log(this.history[0]);
           let dailyData = this.getDailyResults(this.history);
           let dailyDataByHour = this.groupDataByHour(dailyData);
-          console.log(dailyDataByHour);
-          //this.updateDailyChart(dailyData);
+
+          //this.updateDailyChart(dailyDataByHour);
 
           $(document).ready(function () {
             $("#history").DataTable({
               responsive: true,
+              aaSorting: [],
             });
           });
         });
