@@ -1,7 +1,6 @@
 const app = new Vue({
   el: "#app",
   created() {
-    this.InitializeChartsCanvas();
     //?past miliseconds for periodic fetch;
     this.fetchCurrentTemp();
     this.fetchHistory();
@@ -9,6 +8,8 @@ const app = new Vue({
   data: {
     currentTempInside: "",
     currentTempOutside: "",
+    dailyInsideTempChart: null,
+    dailyOutsideTempChart: null,
     history: [],
   },
   methods: {
@@ -31,9 +32,10 @@ const app = new Vue({
           this.history = temps.reverse();
           console.log(this.history[0]);
           let dailyData = this.getDailyResults(this.history);
-          let dailyDataByHour = this.groupDataByHour(dailyData);
+          let dailyInsideTemByHour = this.groupInsideTempByHour(dailyData);
+          let dailyOutsideTemByHour = this.groupOutsideTempByHour(dailyData);
 
-          //this.updateDailyChart(dailyDataByHour);
+          this.updateDailyCharts(dailyInsideTemByHour, dailyOutsideTemByHour);
 
           $(document).ready(function () {
             $("#history").DataTable({
@@ -58,7 +60,6 @@ const app = new Vue({
     InitializeChartsCanvas() {
       window.onload = function () {
         new Chart(document.querySelector("#week").getContext("2d"), weekConfig);
-        new Chart(document.querySelector("#day").getContext("2d"), dayConfig);
       };
     },
     getDailyResults(history) {
@@ -67,7 +68,7 @@ const app = new Vue({
       );
       return daily;
     },
-    groupDataByHour(data) {
+    groupInsideTempByHour(data) {
       let results = data.reduce(function (r, a) {
         let currentHour = a.created.split("T")[1].split(":")[0];
         r[currentHour] = r[currentHour] || [];
@@ -83,7 +84,64 @@ const app = new Vue({
 
       return results;
     },
-    updateDailyCharts() {},
+    groupOutsideTempByHour(data) {
+      let results = data.reduce(function (r, a) {
+        let currentHour = a.created.split("T")[1].split(":")[0];
+        r[currentHour] = r[currentHour] || [];
+        r[currentHour].push(a);
+        return r;
+      }, Object.create(null));
+
+      //average of any hour
+      for (const hour in results)
+        results[hour] =
+          (results[hour].reduce((prev, next) => prev + next.outsideTemp, 0) /
+          results[hour].length).toFixed(2);
+
+      return results;
+    },
+    updateDailyCharts(insideTemp, outsideTemp) {
+      let sortedInsideTemp = [];
+      let sortedOutsideTemp = [];
+      let sortedhours = [];
+      Object.keys(insideTemp)
+        .sort()
+        .forEach(function (key) {
+          sortedhours.push(key);
+          sortedInsideTemp.push(insideTemp[key]);
+          sortedOutsideTemp.push(outsideTemp[key]);
+        });
+      //!Inside temp
+      let dailyInsideTempChartConfigs = dayConfig;
+      dailyInsideTempChartConfigs.data.labels = sortedhours;
+
+      dailyInsideTempChartConfigs.data.datasets[0].backgroundColor =
+        window.chartColors.green;
+      dailyInsideTempChartConfigs.data.datasets[0].borderColor =
+        window.chartColors.green;
+        
+      dailyInsideTempChartConfigs.data.datasets[0].data = sortedInsideTemp;
+      dailyInsideTempChartConfigs.options.title.text = "Inside";
+      this.dailyInsideTempChart = new Chart(
+        document.querySelector("#inside").getContext("2d"),
+        dailyInsideTempChartConfigs
+      );
+
+      //!Outisde temp
+      let dailyOutsideTempChartConfigs = dayConfig;
+      dailyOutsideTempChartConfigs.data.labels = sortedhours;
+
+      dailyInsideTempChartConfigs.data.datasets[0].backgroundColor =
+        window.chartColors.yellow;
+      dailyInsideTempChartConfigs.data.datasets[0].borderColor =
+        window.chartColors.yellow;
+      dailyOutsideTempChartConfigs.data.datasets[0].data = sortedOutsideTemp;
+      dailyInsideTempChartConfigs.options.title.text = "Outside";
+      this.dailyOutsideTempChart = new Chart(
+        document.querySelector("#outside").getContext("2d"),
+        dailyOutsideTempChartConfigs
+      );
+    },
     todayDate() {
       var today = new Date();
 
