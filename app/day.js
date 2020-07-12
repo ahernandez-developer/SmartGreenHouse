@@ -38,7 +38,7 @@
       scales: {
         xAxes: [
           {
-            display: false,
+            display: true,
             scaleLabel: {
               display: true,
               labelString: "Dailiy",
