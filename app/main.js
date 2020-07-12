@@ -112,7 +112,7 @@ const app = new Vue({
           sortedOutsideTemp.push(outsideTemp[key]);
         });
       //!Inside temp
-      let dailyInsideTempChartConfigs = dayConfig;
+      let dailyInsideTempChartConfigs = JSON.parse(JSON.stringify(dayConfig));
       dailyInsideTempChartConfigs.data.labels = sortedhours;
 
       dailyInsideTempChartConfigs.data.datasets[0].backgroundColor =
@@ -128,15 +128,15 @@ const app = new Vue({
       );
 
       //!Outisde temp
-      let dailyOutsideTempChartConfigs = dayConfig;
+      let dailyOutsideTempChartConfigs = JSON.parse(JSON.stringify(dayConfig));
       dailyOutsideTempChartConfigs.data.labels = sortedhours;
 
-      dailyInsideTempChartConfigs.data.datasets[0].backgroundColor =
+      dailyOutsideTempChartConfigs.data.datasets[0].backgroundColor =
         window.chartColors.yellow;
-      dailyInsideTempChartConfigs.data.datasets[0].borderColor =
+      dailyOutsideTempChartConfigs.data.datasets[0].borderColor =
         window.chartColors.yellow;
       dailyOutsideTempChartConfigs.data.datasets[0].data = sortedOutsideTemp;
-      dailyInsideTempChartConfigs.options.title.text = "Outside";
+      dailyOutsideTempChartConfigs.options.title.text = "Outside";
       this.dailyOutsideTempChart = new Chart(
         document.querySelector("#outside").getContext("2d"),
         dailyOutsideTempChartConfigs
