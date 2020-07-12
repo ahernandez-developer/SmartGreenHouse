@@ -79,8 +79,8 @@ const app = new Vue({
       //average of any hour
       for (const hour in results)
         results[hour] =
-          results[hour].reduce((prev, next) => prev + next.insideTemp, 0) /
-          results[hour].length;
+          (results[hour].reduce((prev, next) => prev + next.insideTemp, 0) /
+          results[hour].length).toFixed(2);
 
       return results;
     },
