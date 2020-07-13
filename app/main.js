@@ -14,8 +14,8 @@ const app = new Vue({
   },
   methods: {
     fetchCurrentTemp(interval) {
-      interval
-        ? setInterval(this.fetchCurrent(), interval)
+      interval != null
+        ? setInterval(()=>this.fetchCurrent(), interval)
         : this.fetchCurrent();
     },
     fetchHistory() {
@@ -78,9 +78,10 @@ const app = new Vue({
 
       //average of any hour
       for (const hour in results)
-        results[hour] =
-          (results[hour].reduce((prev, next) => prev + next.insideTemp, 0) /
-          results[hour].length).toFixed(2);
+        results[hour] = (
+          results[hour].reduce((prev, next) => prev + next.insideTemp, 0) /
+          results[hour].length
+        ).toFixed(2);
 
       return results;
     },
@@ -94,9 +95,10 @@ const app = new Vue({
 
       //average of any hour
       for (const hour in results)
-        results[hour] =
-          (results[hour].reduce((prev, next) => prev + next.outsideTemp, 0) /
-          results[hour].length).toFixed(2);
+        results[hour] = (
+          results[hour].reduce((prev, next) => prev + next.outsideTemp, 0) /
+          results[hour].length
+        ).toFixed(2);
 
       return results;
     },
@@ -119,7 +121,7 @@ const app = new Vue({
         window.chartColors.green;
       dailyInsideTempChartConfigs.data.datasets[0].borderColor =
         window.chartColors.green;
-        
+
       dailyInsideTempChartConfigs.data.datasets[0].data = sortedInsideTemp;
       dailyInsideTempChartConfigs.options.title.text = "Inside";
       this.dailyInsideTempChart = new Chart(
