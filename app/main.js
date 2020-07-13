@@ -14,9 +14,10 @@ const app = new Vue({
   },
   methods: {
     fetchCurrentTemp(interval) {
+      this.fetchCurrent();
       interval != null
         ? setInterval(()=>this.fetchCurrent(), interval)
-        : this.fetchCurrent();
+        : null;
     },
     fetchHistory() {
       axios
