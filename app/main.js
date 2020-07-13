@@ -2,7 +2,7 @@ const app = new Vue({
   el: "#app",
   created() {
     //?past miliseconds for periodic fetch;
-    this.fetchCurrentTemp();
+    this.fetchCurrentTemp(20000);
     this.fetchHistory();
   },
   data: {
